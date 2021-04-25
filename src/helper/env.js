@@ -9,4 +9,5 @@ module.exports = {
   EMAIL: process.env.FROM_EMAIL,
   EMAIL_PASS: process.env.EMAIL_PASS,
   URL_BACKEND: process.env.FRONTEND_PATH,
+  URL_FRONTEND: process.env.FRONTEND_PATH,
 };

@@ -15,7 +15,7 @@ const register = (email, user, token) => {
         from: EMAIL, // sender address
         to: email, // list of receivers
         subject: "Admin Zwallet", // Subject line
-        html: `Hello ${user},<br> Please Click this link to verify your email.<br><a href=${URL_BACKEND}/activate/${token}/${email}>Click here to verify</a>`,
+        html: `Hello ${user},<br> Please Click this link to verify your email.<br><a href=${URL_BACKEND}/auth/activate/${token}/${email}>Click here to verify</a>`,
       });
       resolve(info);
     } catch (error) {

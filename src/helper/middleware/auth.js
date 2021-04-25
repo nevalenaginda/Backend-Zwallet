@@ -1,19 +1,26 @@
-const jwt = require('jsonwebtoken');
-const { failed } = require('../response')
+const jwt = require("jsonwebtoken");
+const { failed } = require("../response");
 module.exports = {
-    authentication: (req, res, next) => {
-        const header = req.headers;
-        if (!header.token) {
-            failed(res, 'Login required', {})
+  authentication: (req, res, next) => {
+    // const token = req.headers.token;
+    const token = req.cookies.token;
+    console.log(req.cookies);
+
+    if (!token) {
+      //   console.log(token);
+      failed(res, "Login required", {});
+    } else {
+      jwt.verify(token, process.env.JWT_SECRET, (err, decoded) => {
+        if (err) {
+          failed(res, "Invalid token", err);
         } else {
-            jwt.verify(header.token, process.env.JWT_SECRET, (err, decoded) => {
-                if (err) {
-                    failed(res, 'Invalid token', err)
-                } else {
-                    res.userAccess = decoded.access
-                    next()
-                }
-            })
+          res.userAccess = decoded.access;
+          req.email = decoded.email;
+          req.id = decoded.id;
+          console.log(decoded.email);
+          next();
         }
+      });
     }
-}
+  },
+};

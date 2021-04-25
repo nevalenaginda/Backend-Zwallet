@@ -152,6 +152,60 @@ module.exports = {
       failed(res, "Internal serverrr error", []);
     }
   },
+  //transfer minus balance for sender and plus balance for target
+  transferProcess: async (req, res) => {
+    try {
+      const id = req.params.id; // from_id
+      const body = req.body; //req body buat uang yg ditransfer
+      const balance_sender = await mDetailUser(id); //ngambil balance sebelum di update
+      const amount_sender =
+        Number(balance_sender[0].balance) - Number(body.amount); //balance yang bakal dimasukin/update ke balance user
+
+      if (!body.to_id || !body.amount || !body.notes) {
+        failed(res, "All textfield is required!", []);
+      } else {
+        console.log(balance_sender[0].balance);
+        const balance_receiver = await mDetailUser(body.to_id);
+        const amount_receiver =
+          Number(balance_receiver[0].balance) + Number(body.amount);
+
+        if (parseInt(balance_sender[0].balance) >= parseInt(body.amount)) {
+          mTransfer(amount_sender, id)
+            .then((response) => {
+              mTransfer(amount_receiver, body.to_id)
+                .then((response) => {
+                  const data = {
+                    from_id: id,
+                    to_id: req.body.to_id,
+                    amount: req.body.amount,
+                    status: 2,
+                    notes: req.body.notes,
+                  };
+                  mInsertHistory(data)
+                    .then((response) => {
+                      success(res, response, {}, "Transfer Success");
+                    })
+                    .catch((err) => {
+                      failed(res, "Internal server error", []);
+                    });
+                })
+                .catch((err) => {
+                  console.log(err);
+                  failed(res, "Internal serverrr error", []);
+                });
+            })
+            .catch((err) => {
+              console.log(err);
+              failed(res, "Internal serverrr error", []);
+            });
+        } else {
+          failed(res, "Check your balance", []);
+        }
+      }
+    } catch (err) {
+      failed(res, "Internal Server Error", []);
+    }
+  },
   test: async (req, res) => {
     try {
       const history_id = req.params.id; // id history

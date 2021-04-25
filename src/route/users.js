@@ -7,6 +7,7 @@ const {
   updateUser,
   loginPIN,
   detailUser,
+  detailUserByToken,
   listUser,
   changePassword,
   activation,
@@ -16,6 +17,7 @@ const singleUpload = require("../helper/middleware/upload");
 
 Router.get("/api/allUser/:id", authentication, listUser)
   .get("/api/user/:id", authentication, detailUser)
+  .get("/api/profile", authentication, detailUserByToken)
   .get("/api/activate/:token/:email", activation)
   .post("/api/login", login)
   .post("/api/register", register)

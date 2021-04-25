@@ -16,6 +16,7 @@ const mailer = require("../helper/mailer");
 const jwt = require("jsonwebtoken");
 const { JWT_SECRET } = require("../helper/env");
 const fs = require("fs");
+const cookie = require("cookie");
 
 module.exports = {
   login: (req, res) => {
@@ -42,7 +43,17 @@ module.exports = {
                 email: response[0].email,
               };
               const token = jwt.sign(dataUser, JWT_SECRET);
-
+              // set cookie
+              res.setHeader(
+                "Set-Cookie",
+                cookie.serialize("token", token, {
+                  httpOnly: true,
+                  maxAge: 60 * 60 * 24 * 7,
+                  secure: false,
+                  path: "/",
+                  sameSite: "strict",
+                })
+              );
               res.json({
                 message: "Login success",
                 token, // same property and value
@@ -65,7 +76,17 @@ module.exports = {
                 email: response[0].email,
               };
               const token = jwt.sign(dataUser, JWT_SECRET);
-
+              // set cookie
+              res.setHeader(
+                "Set-Cookie",
+                cookie.serialize("token", token, {
+                  httpOnly: true,
+                  maxAge: 60 * 60 * 24 * 7,
+                  secure: false,
+                  path: "/",
+                  sameSite: "strict",
+                })
+              );
               res.json({
                 message: "Login success",
                 token, // same property and value
@@ -231,6 +252,29 @@ module.exports = {
   detailUser: (req, res) => {
     const id = req.params.id;
     mDetailUser(id)
+      .then((response) => {
+        if (response.length > 0) {
+          const data = {
+            id: response[0].id,
+            name: response[0].name,
+            email: response[0].email,
+            image: response[0].image,
+            phone: response[0].phone,
+            balance: response[0].balance,
+          };
+          success(res, data, {}, "Get detail user");
+        } else {
+          notFound(res, "Id user not found", {});
+        }
+      })
+      .catch((err) => {
+        failed(res, "Internal server error", err);
+      });
+  },
+  detailUserByToken: (req, res) => {
+    // const id = req.id;
+    const email = req.email;
+    mCheckEmail(email)
       .then((response) => {
         if (response.length > 0) {
           const data = {

@@ -11,12 +11,10 @@ ZWallet adalah aplikasi website yang menyediakan fitur transfer antar pengguna. 
 - **[Dotenv](https://www.npmjs.com/package/dotenv)**
 - **[Morgan](https://www.npmjs.com/package/morgan)**
 - **[Bcrypt](https://www.npmjs.com/package/bcrypt)**
-- **[Ip](https://www.npmjs.com/package/ip)**
 - **[JWT](https://www.npmjs.com/package/jsonwebtoken)**
 - **[Multer](https://www.npmjs.com/package/multer)**
 - **[Nodemailer](https://www.npmjs.com/package/nodemailer)**
 - **[Joi](https://www.npmjs.com/package/joi)**
-- **[Cookie](https://www.npmjs.com/package/cookie)**
 - **[CookieParser](https://www.npmjs.com/package/cookie-parser)**
 
 

@@ -1,7 +1,6 @@
-# ZWALLET
+# Zwallet
 
-ZWallet is an application that provides a transfer feature between users.
-This is the backend service for this app. 
+ZWallet adalah aplikasi website yang menyediakan fitur transfer antar pengguna. Ini adalah layanan backend untuk aplikasi ini. Anda dapat melihat layanan frontend [disini](https://github.com/nevalenaginda/Frontend-Zwallet).
 
 ## Modules
 

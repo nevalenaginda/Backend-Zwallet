@@ -4,15 +4,20 @@ ZWallet adalah aplikasi website yang menyediakan fitur transfer antar pengguna. 
 
 ## Modules
 
-1. [Bcrypt](https://www.npmjs.com/package/bcrypt)
-2. [Body-parser](https://www.npmjs.com/package/body-parser)
-3. [Cors](https://www.npmjs.com/package/cors)
-4. [Dotenv](https://www.npmjs.com/package/dotenv)
-5. [Express](https://www.npmjs.com/package/express)
-6. [Jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken)
-7. [Multer](https://www.npmjs.com/package/multer)
-8. [Mysql2](https://www.npmjs.com/package/mysql2)
-9. [Nodemon](https://www.npmjs.com/package/nodemon)
+- **[Express](https://expressjs.com/)**
+- **[Nodemon](https://www.npmjs.com/package/nodemon)**
+- **[MySQL2](https://www.npmjs.com/package/mysql2)**
+- **[Cors](https://www.npmjs.com/package/cors)**
+- **[Dotenv](https://www.npmjs.com/package/dotenv)**
+- **[Morgan](https://www.npmjs.com/package/morgan)**
+- **[Bcrypt](https://www.npmjs.com/package/bcrypt)**
+- **[Ip](https://www.npmjs.com/package/ip)**
+- **[JWT](https://www.npmjs.com/package/jsonwebtoken)**
+- **[Multer](https://www.npmjs.com/package/multer)**
+- **[Nodemailer](https://www.npmjs.com/package/nodemailer)**
+- **[Joi](https://www.npmjs.com/package/joi)**
+- **[Cookie](https://www.npmjs.com/package/cookie)**
+- **[CookieParser](https://www.npmjs.com/package/cookie-parser)**
 
 
 

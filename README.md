@@ -66,7 +66,7 @@ Silahkan klik [di sini](https://github.com/nevalenaginda/Frontend-Zwallet)
 ---
 
 ### Deploy
-Silahkan klik link berikut [ini](http://100.25.29.134:5010/)
+Silahkan klik link berikut [ini](https://zwallet-webku-4l5mjoqpw-nevalenaginda.vercel.app/)
 
 ---
 

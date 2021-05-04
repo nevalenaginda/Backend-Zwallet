@@ -61,7 +61,7 @@ Kamu bisa melihat dokumentasi api [di sini](https://documenter.getpostman.com/vi
 ---
 
 ### Frontend
-Silahkan klik [di sini]((https://github.com/nevalenaginda/Frontend-Zwallet)
+Silahkan klik [di sini](https://github.com/nevalenaginda/Frontend-Zwallet)
 
 ---
 

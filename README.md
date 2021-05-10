@@ -1,6 +1,6 @@
 # Zwallet
 
-ZWallet adalah aplikasi website yang menyediakan fitur transfer antar pengguna. Ini adalah layanan backend untuk aplikasi ini. Anda dapat melihat layanan frontend [disini](https://github.com/nevalenaginda/Frontend-Zwallet).
+Zwallet Web-Ku adalah Aplikasi E-Wallet dengan keamanan PIN dan Password sehingga user dapat bertransaksi dengan aman. Ini adalah layanan backend untuk aplikasi ini. Anda dapat melihat layanan frontend [disini](https://github.com/nevalenaginda/Frontend-Zwallet).
 
 ## Modules
 

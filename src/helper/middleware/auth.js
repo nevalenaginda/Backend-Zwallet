@@ -4,7 +4,7 @@ module.exports = {
   authentication: (req, res, next) => {
     // const token = req.headers.token;
     const token = req.cookies.token;
-    console.log(req.cookies);
+    // console.log(req.cookies);
 
     if (!token) {
       //   console.log(token);

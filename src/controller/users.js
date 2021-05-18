@@ -28,6 +28,8 @@ module.exports = {
             body.password,
             response[0].password
           );
+          console.log(body.password);
+          console.log(checkPassword);
 
           if (checkPassword && response[0].pin.length != 0) {
             if (response[0].is_active != 1) {
@@ -390,6 +392,103 @@ module.exports = {
             });
         })
         .catch((err) => {
+          failed(res, "Internal Server Error", err);
+        });
+    }
+  },
+  forgotPassword: async (req, res) => {
+    const email = req.body.email;
+    console.log("emailnya apa");
+    mCheckEmail(email)
+      .then(async (response) => {
+        if (response.length < 1) {
+          failed(res, "Email is not registered or activated!", {});
+        } else {
+          const user = {
+            name: response[0].name,
+            email: response[0].email,
+          };
+          const token = jwt.sign(
+            { identity: user, timestamp: new Date() },
+            JWT_SECRET
+          );
+          if (!email) {
+            failed(res, "email is required!", []);
+          } else {
+            createActivationToken(token, user.email)
+              .then(() => {
+                // Send Email From Here
+                mailer
+                  .forgotPassword(user.email, user.name, token)
+                  .then(() => {
+                    success(
+                      res,
+                      {},
+                      {},
+                      "Please check your email to reset your password!"
+                    );
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                    failed(res, "Mailer Error", err);
+                  });
+              })
+              .catch((err) => {
+                console.log(err);
+                failed(res, "Internal server error", err);
+              });
+          }
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        failed(res, "Internal server error", err);
+      });
+  },
+
+  resetPassword: (req, res) => {
+    if (!req.params.token || !req.params.email || !req.params.password) {
+      failed(res, "Fill all requested field for reset password!", "");
+    } else {
+      getActivation(req.params.token, req.params.email)
+        .then((response) => {
+          mCheckEmail(req.params.email)
+            .then((responseEmail) => {
+              if (responseEmail.length < 1) {
+                failed(res, "Email is not registered or activated!", {});
+              } else {
+                deleteActivation(response[0].id)
+                  .then(async () => {
+                    const salt = await bcrypt.genSalt(10);
+                    const password = await bcrypt.hash(
+                      req.params.password,
+                      salt
+                    );
+                    const data = {
+                      password,
+                    };
+                    mUpdateUser(data, responseEmail[0].id)
+                      .then((response) => {
+                        success(res, {}, {}, "Success reset password");
+                      })
+                      .catch((err) => {
+                        console.log(err);
+                        failed(res, "Internal server error", err);
+                      });
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                    failed(res, "Internal Server Error", err);
+                  });
+              }
+            })
+            .catch((err) => {
+              console.log(err);
+              failed(res, "Internal Server Error", err);
+            });
+        })
+        .catch((err) => {
+          console.log(err);
           failed(res, "Internal Server Error", err);
         });
     }

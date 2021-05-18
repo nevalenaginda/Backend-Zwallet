@@ -11,6 +11,8 @@ const {
   listUser,
   changePassword,
   activation,
+  resetPassword,
+  forgotPassword,
 } = require("../controller/users");
 const { authentication } = require("../helper/middleware/auth");
 const singleUpload = require("../helper/middleware/upload");
@@ -23,6 +25,8 @@ Router.get("/api/allUser/:id", authentication, listUser)
   .post("/api/register", register)
   .patch("/api/user/:id", authentication, singleUpload, updateUser)
   .post("/api/loginPIN/:id", authentication, loginPIN)
-  .patch("/api/changePassword/:id", authentication, changePassword);
+  .patch("/api/changePassword/:id", authentication, changePassword)
+  .post("/api/forgotPassword", forgotPassword)
+  .get("/api/resetPassword/:token/:email/:password", resetPassword);
 
 module.exports = Router;

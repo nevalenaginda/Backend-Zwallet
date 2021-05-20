@@ -109,5 +109,5 @@ FRONTEND_PATH = (Your frontend address, for example http: // localhost: 3000)
 
 ## Related Project
 
-- :white_check_mark: [`Frontend Zwallet`](https://github.com/nevalenaginda/Frontend-Zwallet/tree/week2)
+- :white_check_mark: [`Frontend Zwallet`](https://github.com/nevalenaginda/Frontend-Zwallet)
 - :rocket: [`Production`](http://zwallet-webku.naginda.site/)

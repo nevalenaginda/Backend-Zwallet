@@ -11,11 +11,11 @@
 - [Prerequisites](#prerequisites)
 - [Endpoint](#endpoint)
 - [Installation](#installation)
-- [Related Project](#related-project)
+- [Link](#link)
 
 ## Introduction
 
-My Zwallet Web is an E-Wallet Application with PIN and Password security so that users can transact safely. This is the backend service for this app. You can see the frontend service [disini](https://github.com/nevalenaginda/Backend-Zwallet/tree/week2).
+Zwallet is an E-Wallet Web Application with PIN and Password security so that users can transact safely. This is the backend service for this app. You can see the frontend service [disini](https://github.com/nevalenaginda/Backend-Zwallet/tree/week2).
 
 ## Features
 
@@ -107,7 +107,7 @@ FRONTEND_PATH = (Your frontend address, for example http: // localhost: 3000)
 ```
 6. Run server `npm run dev'
 
-## Related Project
+## Link
 
 - :white_check_mark: [`Frontend Zwallet`](https://github.com/nevalenaginda/Frontend-Zwallet)
 - :rocket: [`Production`](http://zwallet-webku.naginda.site/)

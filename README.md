@@ -11,6 +11,7 @@
 - [Prerequisites](#prerequisites)
 - [Endpoint](#endpoint)
 - [Installation](#installation)
+- [API Documentation](#api-documentation)
 - [Link](#link)
 
 ## Introduction

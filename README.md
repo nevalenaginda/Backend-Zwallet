@@ -107,6 +107,9 @@ FRONTEND_PATH = (Your frontend address, for example http: // localhost: 3000)
 ```
 6. Run server `npm run dev'
 
+## API Documentation
+[![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/13256965/TzRNFA6K)
+
 ## Link
 
 - :white_check_mark: [`Frontend Zwallet`](https://github.com/nevalenaginda/Frontend-Zwallet)

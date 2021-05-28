@@ -14,11 +14,11 @@
 - [API Documentation](#api-documentation)
 - [Link](#link)
 
-## Introduction
+## 🧐 Introduction
 
 Zwallet is an E-Wallet Web Application with PIN and Password security so that users can transact safely. This is the backend service for this app. You can see the frontend service [here](https://github.com/nevalenaginda/Backend-Zwallet/tree/week2).
 
-## Features
+## 💻 Features
 
 - JWT authentication with cookie
 
@@ -28,7 +28,7 @@ Zwallet is an E-Wallet Web Application with PIN and Password security so that us
 
 - CRUD for all tables required in the application
 
-## Built With
+## ⛏️ Built With
 
 - [Express](https://expressjs.com/)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
@@ -42,12 +42,12 @@ Zwallet is an E-Wallet Web Application with PIN and Password security so that us
 - [Nodemailer](https://www.npmjs.com/package/nodemailer)
 - [CookieParser](https://www.npmjs.com/package/cookie-parser)
 
-## Prerequisites
+## ⛏️ Prerequisites
 
 - [NodeJs](https://nodejs.org/en/download/)
 - [XAMPP](https://www.apachefriends.org/index.html)
 
-## Endpoint
+## 💻 Endpoint
 
 - User
 
@@ -89,7 +89,7 @@ Zwallet is an E-Wallet Web Application with PIN and Password security so that us
 | `PATCH`|              /api/history/:id              |
 
 
-## Installation
+## 💻 Installation
 
 1. Open your terminal or command prompt. Then, clone the repository `git clone https://github.com/nevalenaginda/Backend-Zwallet.git`
 2. Create database named `zwallet` and import `zwallet.sql` from this repository
@@ -108,10 +108,10 @@ FRONTEND_PATH = (Your frontend address, for example http: // localhost: 3000)
 ```
 6. Run server `npm run dev'
 
-## API Documentation
+## 💭 API Documentation
 [![Run in Postman](https://run.pstmn.io/button.svg)](https://documenter.getpostman.com/view/13256965/TzRNFA6K)
 
-## Link
+## ✍️ Link
 
 - :white_check_mark: [`Frontend Zwallet`](https://github.com/nevalenaginda/Frontend-Zwallet)
 - :rocket: [`Production`](http://zwallet-webku.naginda.site/)

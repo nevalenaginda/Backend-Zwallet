@@ -16,7 +16,7 @@
 
 ## Introduction
 
-Zwallet is an E-Wallet Web Application with PIN and Password security so that users can transact safely. This is the backend service for this app. You can see the frontend service [disini](https://github.com/nevalenaginda/Backend-Zwallet/tree/week2).
+Zwallet is an E-Wallet Web Application with PIN and Password security so that users can transact safely. This is the backend service for this app. You can see the frontend service [here](https://github.com/nevalenaginda/Backend-Zwallet/tree/week2).
 
 ## Features
 
